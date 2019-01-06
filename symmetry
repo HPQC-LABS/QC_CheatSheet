@@ -1,0 +1,11 @@
+               MOLP MRCC CFOUR
+s          Ag    1   1    1
+p_z        B1u   5   6    5
+p_y        B2u   2   7    2
+p_x        B3u   3   8    3
+d_xy       B1g   4   2    4
+d_xz       B2g   6   3    7
+d_yz       B3g   7   4    6
+d_z^2      Ag    1   1    1
+d_x^2-y^2  Ag    1   1    1
+f_xyz      Au    8   5    8
