@@ -17,4 +17,11 @@ make                                                    <-- make -j went beyond 
 
 # make took 25 minutes to install on wobbie's login node. Maybe "make -j" would work on the compute nodes.
 
+# Tests (while in build directory):
 
+ctest -L unit                                           <-- took 188 seconds on wobbie's login node
+pipenv run ctest -L integration                         <-- took 513 seconds on wobbie's login node
+
+
+# To build with MPI/OpenMP Hybrid, use:
+./setup --prefix=/home/nike/mrchem/ --omp --mpi --cxx=mpiicpc build
