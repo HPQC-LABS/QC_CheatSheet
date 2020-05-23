@@ -15,4 +15,6 @@ module load cmake/3.13.3
 cd build
 make                                                    <-- make -j went beyond the user resource limits on wobbie's login node
 
+# make took 25 minutes to install on wobbie's login node. Maybe "make -j" would work on the compute nodes.
+
 
