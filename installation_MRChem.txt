@@ -1,0 +1,16 @@
+# First you need pipenv:
+
+module load python3
+python3 -m venv mrchemEnv
+source mrchemEnv/bin/activate
+pip install pipenv
+
+# Now install MRChem
+
+git clone git@github.com:MRChemSoft/mrchem.git mrchem
+cd mrchem
+pipenv install
+module load cmake/3.13.3
+./setup --prefix=/home/nike/mrchem/ --omp build              <----- change according to your folder
+cd build
+make -j
