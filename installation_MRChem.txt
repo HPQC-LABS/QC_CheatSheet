@@ -11,6 +11,8 @@ git clone git@github.com:MRChemSoft/mrchem.git mrchem
 cd mrchem
 pipenv install
 module load cmake/3.13.3
-./setup --prefix=/home/nike/mrchem/ --omp build              <----- change according to your folder
+./setup --prefix=/home/nike/mrchem/ --omp build         <-- change according to your folder
 cd build
-make -j
+make                                                    <-- make -j went beyond the user resource limits on wobbie's login node
+
+
