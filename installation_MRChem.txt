@@ -15,6 +15,7 @@ module load cmake/3.13.3
 ./setup --prefix=/home/nike/mrchem/ --omp build                              <-- change according to your folder
 cd build
 make                                                                         <-- make -j went beyond the user resource limits on wobbie's login node
+make install
 
 # "make" took 25 minutes to install on wobbie's login node. Maybe "make -j" would work on the compute nodes.
 # To build with MPI/OpenMP Hybrid, use:
@@ -31,4 +32,4 @@ pipenv run ctest -L integration                                              <--
 # Run the program on the input file mrchem.inp, on a different node:
 
 source /home/nike/mrchemEnv/bin/activate
-pipenv run /home/nike/mrchem/build/bin/mrchem mrchem.inp > mrchem.out &      <-- change according to your folder
+pipenv run /home/nike/mrchem/build/mrchem mrchem.inp > mrchem.out &          <-- change according to your folder
