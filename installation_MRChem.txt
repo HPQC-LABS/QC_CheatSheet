@@ -5,6 +5,7 @@ python3 -m venv mrchemEnv
 source mrchemEnv/bin/activate
 pip install pipenv
 
+########################################
 # Now install MRChem
 
 git clone git@github.com:MRChemSoft/mrchem.git mrchem
@@ -15,13 +16,19 @@ module load cmake/3.13.3
 cd build
 make                                                    <-- make -j went beyond the user resource limits on wobbie's login node
 
-# make took 25 minutes to install on wobbie's login node. Maybe "make -j" would work on the compute nodes.
+# "make" took 25 minutes to install on wobbie's login node. Maybe "make -j" would work on the compute nodes.
+# To build with MPI/OpenMP Hybrid, use:
 
+./setup --prefix=/home/nike/mrchem/ --omp --mpi --cxx=mpiicpc build
+
+########################################
 # Tests (while in build directory):
 
 ctest -L unit                                           <-- took 188 seconds on wobbie's login node
 pipenv run ctest -L integration                         <-- took 513 seconds on wobbie's login node
 
+########################################
+# Run the program on the input file mrchem.inp, on a different node:
 
-# To build with MPI/OpenMP Hybrid, use:
-./setup --prefix=/home/nike/mrchem/ --omp --mpi --cxx=mpiicpc build
+source /home/nike/mrchemEnv/bin/activate
+pipenv run /home/nike/mrchem/build/bin/mrchem mrchem.inp > mrchem.out &
