@@ -1,26 +1,30 @@
-D2h            MOLP MRCC CFOUR
-=================================
-s          Ag    1   1    1
-p_z        B1u   5   6    5
-p_y        B2u   2   7    2
-p_x        B3u   3   8    3
-d_xy       B1g   4   2    4
-d_xz       B2g   6   3    7
-d_yz       B3g   7   4    6
-d_z^2      Ag    1   1    1
-d_x^2-y^2  Ag    1   1    1
-f_xyz      Au    8   5    8
+D2h            MOLP MRCC CFOUR PySCF
+=====================================
+s          Ag    1   1    1     0
+p_z        B1u   5   6    5     5
+p_y        B2u   2   7    2     6
+p_x        B3u   3   8    3     7
+d_xy       B1g   4   2    4     1
+d_xz       B2g   6   3    7     2
+d_yz       B3g   7   4    6     3
+d_z^2      Ag    1   1    1     0
+d_x^2-y^2  Ag    1   1    1     0
+f_xyz      Au    8   5    8     4
 
 C2h            MOLP MRCC CFOUR
-=================================
+====================================
 s,xy       Ag    1   1    
 xz,yz      Bg    4   2    
 z          Au    2   3    
 x,y        Bu    3   4    
 
 C2v            MOLP MRCC CFOUR
-=================================
+===================================
 s,z        A1    1   1    1
 xy         A2    4   4    4
 x,xz       B1    2   2    2?
 y,yz       B2    3   3    3?
+
+
+PySCF: https://sunqm.github.io/pyscf/symm.html
+MOLPRO: https://www.molpro.net/info/current/doc/manual/node36.html
