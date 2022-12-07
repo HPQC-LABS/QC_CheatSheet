@@ -1,0 +1,1 @@
+bse convert-basis --in-fmt nwchem --out-fmt gaussian94 /path/file-nwchem.txt /path/file-gaussian.txt
